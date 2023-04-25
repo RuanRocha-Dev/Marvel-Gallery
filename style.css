@@ -1,0 +1,164 @@
+body {
+    background-color: var(--backgroundBody);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+} 
+
+.containerHeroFavorite {
+    height: 100%;
+    right: 0;
+    padding-right: 3vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+header #imageHero2 {
+    width: auto;
+    height: 95%;
+    border-radius: 15px;
+    object-fit: contain;
+    display: none;
+}
+
+.containerHeroFavorite span {
+    margin-right: 2vw;
+    color: var(--fontColor);
+}
+
+main {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#viewImageHeroChosen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#viewImageHeroChosen #imageHero1 {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    border-radius: 15px;
+    object-fit: cover;
+    display: none;
+}
+
+main h1 {
+    font-size: 2em;
+    color: var(--fontColor);
+    text-shadow: var(--textShadow);
+    padding: 3vh 0;
+}
+
+main input {
+    width: 60%;
+    padding: 2vh 0px;
+    padding-left: 3vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: -13px 17px 11px 0px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    margin: 3vh 0;
+}
+
+main input:focus {
+    border: none;
+}
+
+main ul {
+    width: 60%;
+    height: auto;
+    max-height: auto;
+    overflow-y: hidden;
+    overflow-y: auto;
+}
+
+main ul li {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.3em;
+    padding: 10px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+main ul li:hover {
+    color: var(--fontColor);
+}
+
+#btnSaveHeroFavorite {
+    width: 40%;
+    padding: 2vh 0;
+    margin: 2vh 0;
+    border-radius: 15px;
+    border: none;
+    box-shadow: -13px 17px 11px 0px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: var(--fontColor);
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+}
+
+#btnSaveHeroFavorite:hover {
+    background-color: #000;
+    color: var(--fontColor);
+    transition: all .4s ease;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        justify-content: flex-start;
+    }
+
+    header > span {
+        padding-left: 1vw;
+    }
+
+    main {
+        width: 95%;
+        height: 75%;
+    }  
+    
+    main h1 {
+        text-align: center;
+    }
+
+    main input {
+        width: 75%;
+    }
+
+    #btnSaveHeroFavorite {
+        width: 65%;
+    }
+}
+

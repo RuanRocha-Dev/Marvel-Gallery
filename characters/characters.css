@@ -1,0 +1,110 @@
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+main header {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+main header h1 {
+    font-size: 3em;
+    color: var(--fontColor);
+    padding: 2vh 0;
+}
+
+main header input {
+    width: 50%;
+    padding: 2vh 0px;
+    padding-left: 2vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: -13px 17px 11px 0px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    margin-bottom: 5vh;
+}
+
+main > div {
+    width: 90%;
+    position: relative;
+    margin-bottom: 10vh;
+    background-color: brown;
+}
+
+.containerCharacters {
+    width: 100%;
+    /* height: 60vh; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main > div footer {
+    width: 100%;
+    height: 5vh;
+    position: absolute;
+    bottom: 0;
+    background-color: blueviolet;
+}
+
+.cardCharacters {
+    width: 16vw;
+    border-radius: 10px;
+    margin: 2.5vh 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
+}
+
+.containerImgCharacters {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 25vh;
+    max-height: 25vh;
+}
+
+.containerImgCharacters img {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.containerTitleCharacter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.3vh 0;
+}
+
+.containerTitleCharacter span {
+    width: 90%;
+    font-size: 1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: var(--fontColor);
+}
+
+.containerDescriptionCharacter {
+    width: 100%;
+    min-height: 15vh;
+    height: 15vh;
+    max-height: 15vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}

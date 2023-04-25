@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/globalStyle/global.css">
+    <link rel="stylesheet" href="/globalStyle/reset.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Marvel Comics</title>
+</head>
+<body>
+
+    <header-generic></header-generic>
+    <menu-generic></menu-generic>
+
+    <main>
+        <div class="containerGenerateImg">
+            <h1> Quer gerar uma imagem do seu personagem preferido? </h1>
+            <input type="text" placeholder="Descrição detalhada da imagem" id="valueGenerate">
+            <p class="animate__animated"> Sua imagem deve conter o nome do seu personagem preferido </p>
+            <button id="btnGenerateImg" onclick="generateImg(this)"> Gerar </button>
+        </div>
+
+        <div class="containerImg">
+            <h1> Imagem gerada por você do seu personagem &#x1F601 </h1>
+            <div class="containerImgGenerated">
+                <img src="" id="imgGenerated">
+                <i class="fa fa-download" title="Download" onclick="downloadImg()"></i>
+            </div>
+        </div>
+
+        <h1 class="titleHeroFirst"> Informações do seu Personagem preferido </h1>
+        <div class="InfosCharacter">
+            <div class="containerImgCharacter">
+                <img src="" alt="">
+            </div>
+            <div class="containerNameCharacter">
+                <span> nome Personagem </span>
+            </div>
+            <div class="containerInfosCharacter">
+            </div>
+        </div>
+
+        <h1 class="titleComics"> alguns dos quadrinhos mais lidos </h1>
+        <div class="containerComics"> </div>
+
+        <h1 class="titleEvents"> Alguns dos eventos mais queridos </h1>
+        <div class="containerEvents"> </div>
+    </main>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/build/md5.min.js"></script>
+    <script src="/components/header/header.js" defer></script>
+    <script src="/components/menu/menu.js" defer></script>
+    <script src="/reqMarvel/marvel.js" defer></script>
+    
+    <script src="https://cdnjs.deepai.org/deepai.min.js" defer></script>
+    <script src="/deepAi/deepAi.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/a7f12cccb2.js" crossorigin="anonymous"></script>
+
+    <script src="home.js" defer></script>
+</body>
+</html>

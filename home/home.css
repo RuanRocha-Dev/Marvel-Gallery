@@ -1,0 +1,315 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 7vh;
+    color: var(--fontColor);
+    letter-spacing: 2px;
+}
+
+.containerGenerateImg {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerGenerateImg p {
+    color: var(--backgroundBody); 
+    background-color: var(--fontColor); 
+    margin-bottom: 20px;
+    display: none;
+}
+
+main h1 {
+    font-size: 2em;
+    padding-bottom: 2vh;
+    text-shadow: var(--textShadow);
+}
+
+main input {
+    width: 70%;
+    padding: 2vh 0px;
+    padding-left: 2vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: -13px 17px 11px 0px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    margin-bottom: 3vh;
+}
+
+.containerImgGenerated {
+    width: clamp(25vw, 25vw, 25vw);
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.containerImgGenerated img {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    object-fit: contain;
+}
+
+.containerImgGenerated i {
+    position: absolute;
+    cursor: pointer;
+    bottom: 10px;
+    padding-left: 5px;
+    font-size: 1.2em;
+}
+
+.containerImgGenerated i:hover {
+    color: #000;
+}
+
+#btnGenerateImg {
+    width: 30%;
+    padding: 2vh 0px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: -13px 17px 11px 0px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: var(--fontColor);
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10vh;
+}
+
+#btnGenerateImg:hover {
+    background-color: #000;
+    color: var(--fontColor);
+}
+
+.containerImg {
+    display: none;
+    margin-bottom: 5vh;
+}
+
+.InfosCharacter {
+    width: 30vw;
+    height: 50vh;
+    padding-bottom: 10vh;
+}
+
+.containerImgCharacter {
+    width: 100%;
+    height: 60%;
+    padding-bottom: 10px;
+}
+
+.containerImgCharacter img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding-bottom: 10px;
+}
+
+.containerNameCharacter {
+    width: 100%;
+    height: 5%;
+    text-align: center;
+    padding-bottom: 3vh;
+    font-size: 2em;
+}
+
+.containerNameCharacter span {
+    text-shadow: var(--textShadow);
+}
+
+.containerInfosCharacter {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+
+.containerComics {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.containerComics > div {
+    width: 12vw;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
+}
+
+.containerComics .containerImgComics {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 25vh;
+    max-height: 25vh;
+}
+
+.containerComics button {
+    position: absolute;
+    bottom: 0;
+    padding: 1vh 3vw;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.containerComics button:hover {
+    color: var(--fontColor);
+    background-color: #000;
+}
+
+.containerEvents {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.containerEvents > div {
+    width: 12vw;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
+}
+
+.containerEvents .containerImgComics {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 25vh;
+    max-height: 25vh;
+}
+
+.containerImgComics img {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imagenzinha {
+    background: url('../imgs/giphy.webp') no-repeat center;
+    background-size: 90% 90%;
+}
+
+.containerTitleComics {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.3vh 0;
+}
+
+.containerTitleComics span {
+    width: 90%;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--fontColor);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.containerDescriptionComics {
+    width: 100%;
+    min-height: 15vh;
+    height: 15vh;
+    max-height: 15vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.containerDescriptionComics p {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-top: 10vh;
+    }
+
+    main h1 {
+        width: 90%;
+        text-align: center;
+        padding-bottom: 5vh;
+    }
+
+    .containerImgGenerated {
+        width: clamp(80vw, 80vw, 80vw);
+    }
+
+    main input {
+        width: 85%;
+    }
+
+    .containerGenerateImg p {
+        width: 80%;
+        text-align: center;
+    }
+
+    #btnGenerateImg {
+        width: 40%;
+    }
+
+    .InfosCharacter {
+        width: 80vw;
+        height: auto;
+    } 
+
+    .containerNameCharacter {
+        font-size: 1.6em;
+    }
+
+    .containerComics {
+        width: 90vw;
+    } 
+
+    .containerComics > div {
+        min-width: 40vw;
+        width: 40vw;
+        max-width: 40vw;
+        height: auto;
+    }
+
+    .containerEvents {
+        width: 90vw;
+    } 
+
+    .containerEvents > div {
+        min-width: 40vw;
+        width: 40vw;
+        max-width: 40vw;
+        height: auto;
+    }
+
+    .containerTitleComics {
+        padding: 15px 0px;
+    } 
+
+    .containerDescriptionComics {
+        width: 100%;
+        min-height: 15vh;
+        height: 15vh;
+        max-height: 15vh;
+        overflow-y: auto;
+        text-align: center;
+        padding: 2vh 0;
+    }
+}
+
