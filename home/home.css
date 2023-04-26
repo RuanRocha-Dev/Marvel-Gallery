@@ -201,7 +201,7 @@ main input {
     border-radius: 10px;
 }
 
-.imagenzinha {
+.backgroundImg {
     background: url('../imgs/giphy.webp') no-repeat center;
     background-size: 90% 90%;
 }

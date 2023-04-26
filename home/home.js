@@ -71,7 +71,7 @@ function allComics (idHero, offSetValue = 0) {  //get the main comics
 }
 
 function removeClass (img) {
-    img.classList.remove('imagenzinha');
+    img.classList.remove('backgroundImg');
 }
 
 
