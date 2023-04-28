@@ -4,6 +4,7 @@
     --backgroundBody: #EC1D24;
     --fontColor: #FEFEFE;
     --textShadow: rgba(0 0 0 / 52%)-8px 8px 5px;
+    --boxShadow: -8px 10px 15px 0px rgba(0,0,0,0.75);
     --backgroundModals: #FEFEFE;
 }
 

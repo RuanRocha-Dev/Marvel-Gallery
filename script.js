@@ -70,7 +70,8 @@ function addHeroFavorite (nameHero, infosHero) {
         img2.style = '';
     }
 
-    btnSaveHeroFavorite(infosHero?.name, urlExtense, infosHero?.id)
+    btnSaveHeroFavorite(infosHero?.name, urlExtense, infosHero?.id);
+    resizeLogoAndName();
 }
 
 
@@ -123,6 +124,22 @@ window.addEventListener('resize', () => {
         logoMarvel.style = '';
     }
 })
+
+function resizeLogoAndName () {
+    const logoMarvel = document.querySelector('.mvl-animated-logo');
+    const infosHero = document.querySelector('.containerHeroFavorite');
+
+    const rect1 = logoMarvel.getBoundingClientRect();
+    const rect2 = infosHero.getBoundingClientRect();
+
+    if(rect1.right >= rect2.left) {
+        logoMarvel.style = 'visibility: hidden';
+    } else {
+        logoMarvel.style = '';
+    }
+}
+
+resizeLogoAndName()
 
 function insertInfoHero () {
     const img1 = document.querySelector('#imageHero1'); 

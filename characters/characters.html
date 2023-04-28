@@ -18,21 +18,16 @@
     <main>
         <header>
             <h1> Galeria de Heróis e Vilões </h1>
-            <input type="text" placeholder="Pesquise qualquer Personagem">
-            <select name="" id="selectTypeSearch">
-                <option value="name"> Nome (A - Z) </option>
-                <option value="-name"> Nome (Z - A)</option>
-                <option value="modified"> Modificados (Crescente) </option>
-                <option value="-modified"> Modificados (Decrescente) </option>
-                <option value="comics"> Quadrinhos (Crescente) </option>
-                <option value="-comics"> Quadrinhos (Decrescente) </option>
-                <option value="series"> Séries (Crescente) </option>
-                <option value="-series"> Séries (Decrescente) </option>
-                <option value="stories"> Histórias (Crescente) </option>
-                <option value="-stories"> Histórias (Decrescente) </option>
-                <option value="events"> Eventos (Crescente) </option>
-                <option value="-events"> Eventos (Decrescente) </option>
-            </select>
+            <div class="containerSearchCharacters">
+                <select name="" id="selectTypeSearch">
+                    <option value="name"> Nome (A - Z) </option>
+                    <option value="-name"> Nome (Z - A)</option>
+                    <option value="modified"> Modificados (Crescente) </option>
+                    <option value="-modified"> Modificados (Decrescente) </option>
+                </select>
+                <input type="text" placeholder="Pesquise qualquer Personagem">
+                <button onclick="searchCharacter()"> Buscar </button>
+            </div>
         </header>
         <div>
             <div class="containerCharacters">

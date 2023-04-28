@@ -23,24 +23,48 @@ main header h1 {
     padding: 2vh 0;
 }
 
-main header input {
+.containerSearchCharacters {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+}
+
+.containerSearchCharacters select {
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--boxShadow);
+}
+
+.containerSearchCharacters input {
     width: 50%;
     padding: 2vh 0px;
     padding-left: 2vw;
     border-radius: 15px;
     border: none;
-    box-shadow: -13px 17px 11px 0px rgba(0,0,0,0.1);
+    box-shadow: var(--boxShadow);
     font-size: 1.5em;
-    margin-bottom: 5vh;
 }
 
-main header select {
-    position: absolute;
-    top: 50%;
-    right: 12%;
-    padding: 5px;
+.containerSearchCharacters button {
+    padding: 1.2vh 2.2vw;
     border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    box-shadow: var(--boxShadow);
+    cursor: pointer;
 }
+
+.containerSearchCharacters button:hover {
+    background-color: #000;
+    color: var(--fontColor);
+}
+
 
 main > div {
     width: 75%;
@@ -76,6 +100,7 @@ main > div footer button {
     font-size: 1.1em;
     border-radius: 10px;
     border: none;
+    box-shadow: var(--boxShadow);
     cursor: pointer;
 }
 
@@ -202,4 +227,81 @@ main > div footer button:hover {
 
 .closeModal:hover {
     color: var(--fontColor);
+}
+
+@media (max-width: 768px) {
+    main header h1 {
+        font-size: 1.9em;
+    }
+
+    .containerSearchCharacters {
+        width: 90%;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+
+    .containerSearchCharacters select {
+        padding: 5px 5px;
+        width: 45%;
+        margin: 1vh 0;
+        order: 2;
+    }
+
+    .containerSearchCharacters input {
+        width: 95%;
+        margin: 2vh 0;
+        font-size: 1em;
+        order: 1;
+    }
+
+    .containerSearchCharacters button {
+        padding: 5px 9vw;
+        margin: 1vh 0;
+        order: 3;
+    }
+
+    main > div {
+        width: 95%;
+    }
+
+    .containerCharacters {
+        height: 58vh;
+    }
+
+    .cardCharacters {
+        width: 30%;
+    } 
+
+    .containerImgCharacters {
+        max-height: 15vh;
+    } 
+
+    main > div footer button {
+        width: 35%;
+    }
+
+    main > div footer button:hover {
+        background-color: var(--fontColor);
+        color: inherit;
+    }
+
+    main > div footer button:active {
+        background-color: #000;
+        color: var(--fontColor);
+    }
+
+    .containerSearchCharacters button:hover {
+        background-color: var(--fontColor);
+        color: inherit;
+    }
+
+    .containerSearchCharacters button:active {
+        background-color: #000;
+        color: var(--fontColor);
+    }
+
+    .containerModal {
+        width: 85vw;
+        height: 70vh;
+    } 
 }

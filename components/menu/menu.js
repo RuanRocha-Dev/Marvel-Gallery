@@ -17,6 +17,13 @@ class Menu extends HTMLElement {
         li5.innerHTML = 'Séries';
         const li6 = document.createElement('a');
         li6.innerHTML = 'Histórias';
+        const li7 = document.createElement('a');
+        li7.innerHTML = 'Sair';
+        li7.href = '../index.html';
+        li7.onclick = () => {
+            localStorage.removeItem('heroSelected');
+            localStorage.removeItem('srcImgHeroSelected');
+        }
 
         const style = document.createElement('style');
         style.innerHTML = ` .menu {
@@ -100,6 +107,7 @@ class Menu extends HTMLElement {
         ul.appendChild(li4);
         ul.appendChild(li5);
         ul.appendChild(li6);
+        ul.appendChild(li7);
 
         shadow.appendChild(ul);
         shadow.appendChild(style);

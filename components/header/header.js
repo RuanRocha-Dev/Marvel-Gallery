@@ -98,7 +98,7 @@ class Header extends HTMLElement {
                                 }
                             
                                 header > span {
-                                    padding-left: 1vw;
+                                    margin-left: 25px;
                                 }
                             }`;
 
