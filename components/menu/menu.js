@@ -37,7 +37,7 @@ class Menu extends HTMLElement {
                                 top: 0;
                                 left: 0;
                                 width: 12vw;
-                                background-color: var(--backgroundBody);
+                                border-radius: 0 0 25px 0;
                                 color: var(--fontColor);
                                 box-sizing: border-box;
                                 margin: 0;
@@ -64,7 +64,12 @@ class Menu extends HTMLElement {
                             }
 
                             .menu a:hover {
-                                color: #000;
+                                background: rgb(236,29,36);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                background-clip: text;
+                                background-size: 100% 200%;
+                                transition: background-position 0.5s ease;
                             }
                             
                             .menu a {

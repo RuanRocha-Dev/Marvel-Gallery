@@ -8,7 +8,7 @@ window.onload = () => {
 let btnSearch = document.querySelector('.containerSearchCharacters button');
 let btnPlus = document.querySelector('#btnPlus');
 
-function getFirstResults (orderSelect = 'name', nameCharacter = '') {
+function getFirstResults (orderSelect = 'name', nameCharacter = '') {  //function that fetches the next 12 results of the characters in general
     const name = nameCharacter != '' ? `nameStartsWith=${nameCharacter}&` : ''; 
     let params = `characters?${name}limit=12&offset=${counterPerson}&orderBy=${orderSelect}`;
     const containerCharacters = document.querySelector('.containerCharacters');
@@ -16,14 +16,21 @@ function getFirstResults (orderSelect = 'name', nameCharacter = '') {
     reqGeneric(params).then((resp) => {
         const results = resp.data.results;
 
-        // !e.thumbnail.path.includes('not_available') ? ${e.thumbnail.path}.${e.thumbnail.extension} : '' 
-
+        if(results.length <= 0 && counterPerson <= 12) {
+            containerCharacters.innerHTML = `<h1 style="font-size: 4em; color: var(--fontColor); text-shadow: var(--textShadow)"> Nenhum Resultado Encontrado </h1>`;
+            btnSearch.disabled = false;
+            btnPlus.disabled = false;
+            btnPlus.classList.add('d-none');
+            return false;
+        }
+        
         results.forEach(e => {
+            let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
             let description = e.description != '' ? e.description : 'Information not available!';
 
-            itensAdds += `  <div class="cardCharacters" onclick='showInformation("${(e.thumbnail.path)}.${e.thumbnail.extension}", "${(e.name.replace(/['"]+/g, ''))}", "${description.replace(/['"]+/g, '')}")'>
+            itensAdds += `  <div class="cardCharacters" onclick='showInformation("${srcImage}", "${(e.name.replace(/['"]+/g, ''))}", "${description.replace(/['"]+/g, '')}")'>
                                 <div class="containerImgCharacters">
-                                    <img src="${e.thumbnail.path}.${e.thumbnail.extension}" onload="removeClass(this)">
+                                    <img src="${srcImage}" onload="removeClass(this)">
                                 </div>
                                 <div class="containerTitleCharacter">
                                     <span> ${e.name} </span>
@@ -36,6 +43,13 @@ function getFirstResults (orderSelect = 'name', nameCharacter = '') {
 
         btnSearch.disabled = false;
         btnPlus.disabled = false;
+
+        if(results.length < 12 ) {
+            btnPlus.classList.add('d-none');
+            return false;
+        }
+
+        btnPlus.classList.remove('d-none');
     })
 
     counterPerson = counterPerson + 12;
@@ -45,7 +59,7 @@ function removeClass (img) {
     img.classList.remove('backgroundImg');
 }
 
-function showInformation (srcImg, nameCharacter, descriptionCharacter) {
+function showInformation (srcImg, nameCharacter, descriptionCharacter) {  // creates a modal to show the details of the clicked character
     const containerModal = document.createElement('div');
     containerModal.classList.add('containerModal', 'animate__animated', 'animate__zoomIn');
 
@@ -112,6 +126,12 @@ btnPlus.addEventListener('click', () => {
 
 
 function searchCharacter () {
+    if(!inputSearchCharacter.value != '') {
+        inputSearchCharacter.classList.add('animate__swing');
+        inputSearchCharacter.onanimationend = () => { inputSearchCharacter.classList.remove('animate__swing') }
+        return false;
+    }
+
     counterPerson = 0;
 
     btnSearch.disabled = true;

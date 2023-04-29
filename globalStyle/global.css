@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 :root {
-    --backgroundBody: #EC1D24;
+    --backgroundBody: radial-gradient(circle, rgba(236,29,36,1) 0%, rgba(0,0,0,1) 100%), rgb(236,29,36);
     --fontColor: #FEFEFE;
     --textShadow: rgba(0 0 0 / 52%)-8px 8px 5px;
     --boxShadow: -8px 10px 15px 0px rgba(0,0,0,0.75);
@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: var(--backgroundBody);
+    background: var(--backgroundBody);
 }
 
 .d-none {
