@@ -4,7 +4,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: aqua; */
 }
 
 main header {
@@ -23,7 +22,7 @@ main header h1 {
     padding: 2vh 0;
 }
 
-.containerSearchCharacters {
+.containerSearchComics {
     width: 90%;
     height: auto;
     display: flex;
@@ -34,14 +33,14 @@ main header h1 {
     margin-bottom: 5vh;
 }
 
-.containerSearchCharacters select {
+.containerSearchComics select {
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: var(--boxShadow);
 }
 
-.containerSearchCharacters input {
+.containerSearchComics input {
     width: 50%;
     padding: 2vh 0px;
     padding-left: 2vw;
@@ -51,7 +50,7 @@ main header h1 {
     font-size: 1.5em;
 }
 
-.containerSearchCharacters button {
+.containerSearchComics button {
     padding: 1.2vh 2.2vw;
     border-radius: 10px;
     border: none;
@@ -60,18 +59,12 @@ main header h1 {
     cursor: pointer;
 }
 
-.containerSearchCharacters button:hover {
-    background-color: #000;
-    color: var(--fontColor);
-}
-
-
 main > div {
     width: 75%;
     position: relative;
 }
 
-.containerCharacters {
+.containerComics {
     width: 100%;
     height: 65vh;
     display: flex;
@@ -79,14 +72,48 @@ main > div {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    overflow-y: scroll !important;
-    overflow-y: hidden;
+    overflow-x: scroll !important;
+    overflow-x: hidden;
 }
 
-.containerCharacters h1 {
+.containerComics h1 {
     font-size: 4em; 
     color: var(--fontColor); 
     text-shadow: var(--textShadow)
+}
+
+.cardComics {
+    width: 15%;
+    border-radius: 10px;
+    margin: 1vh 0;
+    cursor: pointer;
+    background: rgb(0,0,0);
+    background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
+}
+
+.containerImgComics {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 20vh;
+    max-height: 20vh;
+}
+
+.containerImgComics img {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.containerTitleCharacter span {
+    width: 90%;
+    font-size: 1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: var(--fontColor);
 }
 
 main > div footer {
@@ -109,36 +136,7 @@ main > div footer button {
     cursor: pointer;
 }
 
-main > div footer button:hover {
-    background-color: #000;
-    color: var(--fontColor);
-}
-
-.cardCharacters {
-    width: 15%;
-    border-radius: 10px;
-    margin: 1vh 0;
-    cursor: pointer;
-    background: rgb(0,0,0);
-    background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
-}
-
-.containerImgCharacters {
-    min-width: 100%;
-    width: 100%;
-    max-width: 100%;
-    height: 20vh;
-    max-height: 20vh;
-}
-
-.containerImgCharacters img {
-    width: clamp(100%, 100%, 100%);
-    height: clamp(100%, 100%, 100%);
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.containerTitleCharacter {
+.containerTitleComics {
     width: 100%;
     display: flex;
     align-items: center;
@@ -146,7 +144,7 @@ main > div footer button:hover {
     padding: 1.3vh 0;
 }
 
-.containerTitleCharacter span {
+.containerTitleComics span {
     width: 90%;
     font-size: 1.1em;
     overflow: hidden;
@@ -156,22 +154,12 @@ main > div footer button:hover {
     color: var(--fontColor);
 }
 
-.containerDescriptionCharacter {
-    width: 100%;
-    min-height: 15vh;
-    height: 15vh;
-    max-height: 15vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-}
-
 .backgroundImg {
     background: url('../imgs/giphy.webp') no-repeat center;
     background-size: 90% 90%;
 }
 
-.containerModal {
+.containerModalComic {
     width: clamp(25vw, 25vw, 25vw);
     height: clamp(30vw, 30vw, 30vw);
     display: flex;
@@ -192,46 +180,6 @@ main > div footer button:hover {
     color: var(--fontColor);
 }
 
-.containerImg {
-    width: 80%;
-    height: 55%;
-    position: relative;
-}
-
-.containerImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.containerName {
-    width: 80%;
-    height: 3%;
-    padding: 8% 0;
-    text-align: center;
-}
-
-.containerName span {
-    font-size: 1.3em;
-}
-
-.containerDescription {
-    width: 80%;
-    height: 25%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    text-align: center;
-}
-
-.closeModal {
-    cursor: pointer;
-    color: red;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 2em;
-}
-
 .closeModal:hover {
     color: var(--fontColor);
 }
@@ -241,27 +189,27 @@ main > div footer button:hover {
         font-size: 1.9em;
     }
 
-    .containerSearchCharacters {
+    .containerSearchComics {
         width: 90%;
         flex-wrap: wrap;
         margin-bottom: 0px;
     }
 
-    .containerSearchCharacters select {
+    .containerSearchComics select {
         padding: 5px 5px;
         width: 45%;
         margin: 1vh 0;
         order: 2;
     }
 
-    .containerSearchCharacters input {
+    .containerSearchComics input {
         width: 95%;
         margin: 2vh 0;
         font-size: 1em;
         order: 1;
     }
 
-    .containerSearchCharacters button {
+    .containerSearchComics button {
         padding: 5px 9vw;
         margin: 1vh 0;
         order: 3;
@@ -271,20 +219,20 @@ main > div footer button:hover {
         width: 95%;
     }
 
-    .containerCharacters {
+    .containerComics {
         height: 58vh;
     }
 
-    .containerCharacters h1 {
+    .containerComics h1 {
         font-size: 2em;
         text-align: center;
     }
 
-    .cardCharacters {
+    .cardComics {
         width: 30%;
     } 
 
-    .containerImgCharacters {
+    .containerImgComics {
         max-height: 15vh;
     } 
 
@@ -302,18 +250,22 @@ main > div footer button:hover {
         color: var(--fontColor);
     }
 
-    .containerSearchCharacters button:hover {
+    .containerSearchComics button:hover {
         background-color: var(--fontColor);
         color: inherit;
     }
 
-    .containerSearchCharacters button:active {
+    .containerSearchComics button:active {
         background-color: #000;
         color: var(--fontColor);
     }
 
-    .containerModal {
+    .containerModalComic {
         width: 85vw;
         height: 70vh;
     } 
+
+    .containerTitleComics span {
+        font-size: .8em;
+    }
 }

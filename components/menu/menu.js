@@ -9,6 +9,7 @@ class Menu extends HTMLElement {
         li1.href = '../characters/characters.html';
         const li2 = document.createElement('a');
         li2.innerHTML = 'Quadrinhos';
+        li2.href = '../comics/comics.html';
         const li3 = document.createElement('a');
         li3.innerHTML = 'Criadores';
         const li4 = document.createElement('a');
@@ -38,6 +39,7 @@ class Menu extends HTMLElement {
                                 left: 0;
                                 width: 12vw;
                                 border-radius: 0 0 25px 0;
+                                background-color: rgba(0 0 0 / 52%);
                                 color: var(--fontColor);
                                 box-sizing: border-box;
                                 margin: 0;

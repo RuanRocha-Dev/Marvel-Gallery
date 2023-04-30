@@ -17,7 +17,7 @@ function getFirstResults (orderSelect = 'name', nameCharacter = '') {  //functio
         const results = resp.data.results;
 
         if(results.length <= 0 && counterPerson <= 12) {
-            containerCharacters.innerHTML = `<h1 style="font-size: 4em; color: var(--fontColor); text-shadow: var(--textShadow)"> Nenhum Resultado Encontrado </h1>`;
+            containerCharacters.innerHTML = `<h1> Nenhum Resultado Encontrado </h1>`;
             btnSearch.disabled = false;
             btnPlus.disabled = false;
             btnPlus.classList.add('d-none');
