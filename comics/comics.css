@@ -20,6 +20,7 @@ main header h1 {
     font-size: 3em;
     color: var(--fontColor);
     padding: 2vh 0;
+    text-shadow: var(--textShadow);
 }
 
 .containerSearchComics {
@@ -160,17 +161,16 @@ main > div footer button {
 }
 
 .containerModalComic {
-    width: clamp(25vw, 25vw, 25vw);
-    height: clamp(30vw, 30vw, 30vw);
+    width: 80vw;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--backgroundModals);
     border-radius: 15px;
     background-image: url('../imgs/moonKnight.jpg');
     background-position: center;
@@ -182,6 +182,84 @@ main > div footer button {
 
 .closeModal:hover {
     color: var(--fontColor);
+}
+
+.containerImgAndtitle {
+    width: clamp(50%, 50%, 50%);
+    height: clamp(100%, 100%, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerImgComic {
+    width: 100%;
+    height: clamp(78%, 78%, 78%);
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerImgComic img {
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.containerTitle {
+    width: 100%;
+    height: clamp(20%, 20%, 20%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerTitle span {
+    font-size: 2em;
+}
+
+.containerInfosCreatorsAndCharacters {
+    width: clamp(50%, 50%, 50%);
+    height: clamp(100%, 100%, 100%);
+}
+
+.containerCreatorComic, .containerCharactersIncludes {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.containerCreatorComic h3, .containerCharactersIncludes h3 {
+    font-size: 4em;
+    border-bottom: 2px solid var(--fontColor);
+}
+
+.containerCreatorComic ul, .containerCharactersIncludes ul {
+    max-height: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.containerCreatorComic ul li, .containerCharactersIncludes ul li {
+    font-size: 1.6em;
+    padding: 5px 0;
+}
+
+.containerModalComic > span {
+    font-size: 3em;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.containerModalComic > span:hover {
+    color: red;
 }
 
 @media (max-width: 768px) {
@@ -261,11 +339,47 @@ main > div footer button {
     }
 
     .containerModalComic {
-        width: 85vw;
-        height: 70vh;
-    } 
+        width: 90vw;
+        height: 80vh;
+        flex-direction: column;
+    }
 
-    .containerTitleComics span {
+    .containerImgComic img {
+        width: 100%;
+    }
+
+    .containerTitle span {
+        font-size: 1em;
+    }
+
+    .containerImgAndtitle {
+        width: clamp(100%, 100%, 100%);
+        height: clamp(50%, 50%, 50%);
+    }
+
+    .containerInfosCreatorsAndCharacters {
+        width: clamp(100%, 100%, 100%);
+        height: clamp(50%, 50%, 50%);
+    }
+
+    .containerCreatorComic, .containerCharactersIncludes {
+        max-height: 50%;
+    }
+
+    .containerCreatorComic h3, .containerCharactersIncludes h3 {
+        font-size: 1.6em;
+    }
+
+    .containerCreatorComic ul, .containerCharactersIncludes ul {
+        max-height: 40%;
+    }
+
+    .containerCreatorComic ul li, .containerCharactersIncludes ul li {
         font-size: .8em;
+    }
+
+    .containerModalComic > span {
+        font-size: 2em;
+        right: 5%;
     }
 }

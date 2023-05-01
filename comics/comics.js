@@ -25,12 +25,10 @@ function getFirstResultsComics (orderSelect = 'title', nameComic = '') {  //func
         }
         
         results.forEach(e => {
-            let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
-            // let description = e.description != '' ? e.description : 'Information not available!';
-            let novoArray = [{"creators": e?.creators?.items, "characters": e?.characters?.items}]
 
+            let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
             
-            itensAddscomics += `  <div class="cardComics" value='' onclick='showInformation("${srcImage}", "${(e?.title?.replace(/['"]+/g, ''))}", "${JSON.stringify(novoArray)}")'>
+            itensAddscomics += `  <div class="cardComics" onclick='showInformation("${srcImage}", "${(e?.title?.replace(/['"]+/g, ''))}", ${JSON.stringify(e?.creators?.items)}, ${JSON.stringify(e?.characters?.items)} )'>
                                     <div class="containerImgComics">
                                         <img src="${srcImage}" onload="removeClass(this)">
                                     </div>
@@ -61,7 +59,7 @@ function removeClass (img) {
     img.classList.remove('backgroundImg');
 }
 
-function showInformation (srcImg, titleComic, arrayNameCreator) {  // creates a modal to show the details of the clicked comic        closeModalComics
+function showInformation (srcImg, titleComic, arrayNameCreator, arrayCharactersInComics) {  // creates a modal to show the details of the clicked comic        closeModalComics
     const containerModalComic = document.createElement('div');
     containerModalComic.classList.add('containerModalComic');
 
@@ -73,20 +71,62 @@ function showInformation (srcImg, titleComic, arrayNameCreator) {  // creates a 
                                                 <span> ${titleComic} </span>
                                             </div>
                                         </div>
-                                        <div>
+                                        <div class="containerInfosCreatorsAndCharacters">
                                             <div class="containerCreatorComic">
+                                                <h3> Criadores </h3>
+                                                <ul>
+                                                    ${getCharacterAndCreatorsInComic(arrayNameCreator)}
+                                                </ul>
                                             </div>
                                             <div class="containerCharactersIncludes">
-                                                ${getCharacterAndCreatorsInComic(arrayNameCreator)}
+                                                <h3> Personagens </h3>
+                                                <ul>
+                                                    ${getCharacterAndCreatorsInComic(null, arrayCharactersInComics)}
+                                                </ul>
                                             </div>
                                         </div>
-                                        <span> X </span>`;
+                                        <span onclick="closeModalComics(this.closest('.containerModalComic'))"> X </span>`;
 
+    containerModalComic.classList.add('animate__animated', 'animate__zoomIn');
     document.body.appendChild(containerModalComic);
 }
 
-function getCharacterAndCreatorsInComic (arrayCharacters) {
-    console.log(arrayCharacters)
+function getCharacterAndCreatorsInComic (arrayCreators, arraycharacters) {
+    let itensCreators = '';
+    let itensCharacters = '';
+
+    if(arrayCreators != null || arrayCreators != undefined) {
+        if(arrayCreators.length <= 0) {
+            return '<li> Nenhum criador encontrado </li>';
+        }
+
+        arrayCreators.forEach(el => {
+            itensCreators += `<li> <b>${el.name}</b>: ${el.role} </li>`;
+        })
+
+        return itensCreators;
+    }
+
+    if(arraycharacters != null || arraycharacters != undefined) {
+        if(arraycharacters.length <= 0) {
+            return '<li> Nenhum personagem encontrado </li>';
+        }
+
+        arraycharacters.forEach(el => {
+            itensCharacters += `<li> ${el.name} </li>`;
+        })
+
+        return itensCharacters;
+    }
+}
+
+function closeModalComics (elementRemove) {
+    elementRemove.classList.remove('animate__zoomIn')
+    elementRemove.classList.add('animate__zoomOut')
+
+    elementRemove.onanimationend = () => {
+        elementRemove.remove();
+    }
 }
 
 const containerComics = document.querySelector('.containerComics');

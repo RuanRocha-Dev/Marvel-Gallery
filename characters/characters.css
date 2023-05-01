@@ -21,6 +21,7 @@ main header h1 {
     font-size: 3em;
     color: var(--fontColor);
     padding: 2vh 0;
+    text-shadow: var(--textShadow);
 }
 
 .containerSearchCharacters {
