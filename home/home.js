@@ -55,7 +55,7 @@ function allComics (idHero, offSetValue = 0) {  //get the main comics
             let urlImg = el.thumbnail.path.includes('image_not_avai') ? idHeroFavorite.srcImgHero : `${el.thumbnail.path}.${el.thumbnail.extension}`; 
             comicsHTML += ` <div>
                                 <div class="containerImgComics">
-                                    <img class="imagenzinha" src="${urlImg}" onload="removeClass(this)">
+                                    <img class="backgroundImg" src="${urlImg}" onload="removeClass(this)">
                                 </div>
                                 <div class="containerTitleComics">
                                     <span title="${el.title}"> ${el.title} </span>
@@ -101,7 +101,7 @@ function getEventsHero() {   // get the main events
             let urlImg = el.thumbnail.path.includes('image_not_avai') ? idHeroFavorite.srcImgHero : `${el.thumbnail.path}.${el.thumbnail.extension}`; 
             eventsHTML += ` <div>
                                 <div class="containerImgComics">
-                                    <img class="imagenzinha" src="${urlImg}" onload="removeClass(this)">
+                                    <img class="backgroundImg" src="${urlImg}" onload="removeClass(this)">
                                 </div>
                                 <div class="containerTitleComics">
                                     <span title="${el.title}"> ${el.title} </span>

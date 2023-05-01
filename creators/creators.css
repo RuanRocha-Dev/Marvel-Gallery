@@ -1,0 +1,391 @@
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main header {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 2vh;
+}
+
+main header h1 {
+    font-size: 3em;
+    color: var(--fontColor);
+    padding: 2vh 0;
+    text-shadow: var(--textShadow);
+}
+
+.containerSearchCreators {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+}
+
+.containerSearchCreators select {
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--boxShadow);
+}
+
+.containerSearchCreators input {
+    width: 50%;
+    padding: 2vh 0px;
+    padding-left: 2vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: var(--boxShadow);
+    font-size: 1.5em;
+}
+
+.containerSearchCreators button {
+    padding: 1.2vh 2.2vw;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    box-shadow: var(--boxShadow);
+    cursor: pointer;
+}
+
+main > div {
+    width: 75%;
+    position: relative;
+}
+
+.containerCreators {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    overflow-x: scroll !important;
+    overflow-x: hidden;
+}
+
+.containerCreators h1 {
+    font-size: 4em; 
+    color: var(--fontColor); 
+    text-shadow: var(--textShadow)
+}
+
+.cardCreators {
+    width: 15%;
+    border-radius: 10px;
+    margin: 1vh 0;
+    cursor: pointer;
+    background: rgb(0,0,0);
+    background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
+}
+
+.containerImgCreators {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 20vh;
+    max-height: 20vh;
+}
+
+.containerImgCreators img {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.containerTitleCharacter span {
+    width: 90%;
+    font-size: 1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: var(--fontColor);
+}
+
+main > div footer {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -3.3vh;
+}
+
+main > div footer button {
+    width: 15%;
+    height: 100%;
+    font-size: 1.1em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: var(--boxShadow);
+    cursor: pointer;
+}
+
+.containerTitleCreators {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.3vh 0;
+}
+
+.containerTitleCreators span {
+    width: 90%;
+    font-size: 1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: var(--fontColor);
+}
+
+.backgroundImg {
+    background: url('../imgs/giphy.webp') no-repeat center;
+    background-size: 90% 90%;
+}
+
+.containerModalCreator {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    background-image: url('../imgs/moonKnight.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    color: var(--fontColor);
+}
+
+.closeModal:hover {
+    color: var(--fontColor);
+}
+
+.containerImgAndtitle {
+    width: clamp(50%, 50%, 50%);
+    height: clamp(100%, 100%, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerImgCreator {
+    width: 100%;
+    height: clamp(78%, 78%, 78%);
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerImgCreator img {
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.containerTitle {
+    width: 100%;
+    height: clamp(20%, 20%, 20%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerTitle span {
+    font-size: 2em;
+}
+
+.containerInfosCreatorsAndCharacters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: clamp(50%, 50%, 50%);
+    height: clamp(100%, 100%, 100%);
+}
+
+.containerCreatorCreator, .containerCharactersIncludes, .containerStoriesCreators, .containerSeriesCreators {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.containerCreatorCreator h3, .containerCharactersIncludes h3, .containerStoriesCreators h3, .containerSeriesCreators h3 {
+    font-size: 3em;
+    border-bottom: 2px solid var(--fontColor);
+}
+
+.containerCreatorCreator ul, .containerCharactersIncludes ul, .containerStoriesCreators ul, .containerSeriesCreators ul {
+    max-height: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.containerCreatorCreator ul li, .containerCharactersIncludes ul li, .containerStoriesCreators ul li, .containerSeriesCreators ul li {
+    font-size: 1.6em;
+    padding: 5px 0;
+}
+
+.containerModalCreator > span {
+    font-size: 3em;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.containerModalCreator > span:hover {
+    color: red;
+}
+
+@media (max-width: 768px) {
+    main header h1 {
+        font-size: 1.9em;
+        text-align: center;
+    }
+
+    .containerSearchCreators {
+        width: 90%;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+
+    .containerSearchCreators select {
+        padding: 5px 5px;
+        width: 45%;
+        margin: 1vh 0;
+        order: 2;
+    }
+
+    .containerSearchCreators input {
+        width: 95%;
+        margin: 2vh 0;
+        font-size: 1em;
+        order: 1;
+    }
+
+    .containerSearchCreators button {
+        padding: 5px 9vw;
+        margin: 1vh 0;
+        order: 3;
+    }
+
+    main > div {
+        width: 95%;
+    }
+
+    .containerCreators {
+        height: 58vh;
+    }
+
+    .containerCreators h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .cardCreators {
+        width: 30%;
+    } 
+
+    .containerImgCreators {
+        max-height: 15vh;
+    } 
+
+    main > div footer button {
+        width: 35%;
+    }
+
+    main > div footer button:hover {
+        background-color: var(--fontColor);
+        color: inherit;
+    }
+
+    main > div footer button:active {
+        background-color: #000;
+        color: var(--fontColor);
+    }
+
+    .containerSearchCreators button:hover {
+        background-color: var(--fontColor);
+        color: inherit;
+    }
+
+    .containerSearchCreators button:active {
+        background-color: #000;
+        color: var(--fontColor);
+    }
+
+    .containerModalCreator {
+        width: 90vw;
+        height: 80vh;
+        flex-direction: column;
+    }
+
+    .containerImgCreator img {
+        width: 100%;
+    }
+
+    .containerTitle span {
+        font-size: 1em;
+    }
+
+    .containerImgAndtitle {
+        width: clamp(100%, 100%, 100%);
+        height: clamp(50%, 50%, 50%);
+    }
+
+    .containerInfosCreatorsAndCharacters {
+        width: clamp(100%, 100%, 100%);
+        height: clamp(50%, 50%, 50%);
+    }
+
+    .containerCreatorCreator, .containerCharactersIncludes .containerStoriesCreators, .containerSeriesCreators {
+        max-height: 20%;
+    }
+
+    .containerCreatorCreator h3, .containerCharactersIncludes h3, .containerStoriesCreators h3, .containerSeriesCreators h3 {
+        font-size: 1.6em;
+    }
+
+    .containerCreatorCreator ul, .containerCharactersIncludes ul, .containerStoriesCreators ul, .containerSeriesCreators ul {
+        max-height: 40%;
+        text-align: center;
+    }
+
+    .containerCreatorCreator ul li, .containerCharactersIncludes ul li, .containerStoriesCreators ul li, .containerSeriesCreators ul li {
+        font-size: .8em;
+    }
+
+    .containerModalCreator > span {
+        font-size: 2em;
+        right: 5%;
+    }
+}

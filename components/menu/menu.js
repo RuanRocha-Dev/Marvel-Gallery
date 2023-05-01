@@ -12,12 +12,16 @@ class Menu extends HTMLElement {
         li2.href = '../comics/comics.html';
         const li3 = document.createElement('a');
         li3.innerHTML = 'Criadores';
+        li3.href = '../creators/creators.html';
         const li4 = document.createElement('a');
         li4.innerHTML = 'Eventos';
+        li4.href = '#';
         const li5 = document.createElement('a');
         li5.innerHTML = 'Séries';
+        li5.href = '#';
         const li6 = document.createElement('a');
         li6.innerHTML = 'Histórias';
+        li6.href = '#';
         const li7 = document.createElement('a');
         li7.innerHTML = 'Sair';
         li7.href = '../index.html';
@@ -128,8 +132,13 @@ const headerGeneric = document.querySelector('header-generic');
 const hamburguer = headerGeneric.shadowRoot.querySelector('.menuIconHamgurguer');
 
 const menuGeneric = document.querySelector('menu-generic');
-const menu = menuGeneric.shadowRoot.querySelector('.menu');;
+const menu = menuGeneric.shadowRoot.querySelector('.menu');
 
 hamburguer.addEventListener('click', () => {
     menu.classList.toggle('menuToggle');  // the code so far makes the function of opening and closing the side menu
 })
+
+
+const menuItem = menu.querySelector(`a[href="..${window.location.pathname}"]`);
+menuItem.style.color = 'red';
+

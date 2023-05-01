@@ -30,7 +30,7 @@ function getFirstResultsComics (orderSelect = 'title', nameComic = '') {  //func
             
             itensAddscomics += `  <div class="cardComics" onclick='showInformation("${srcImage}", "${(e?.title?.replace(/['"]+/g, ''))}", ${JSON.stringify(e?.creators?.items)}, ${JSON.stringify(e?.characters?.items)} )'>
                                     <div class="containerImgComics">
-                                        <img src="${srcImage}" onload="removeClass(this)">
+                                        <img class="backgroundImg" src="${srcImage}" onload="removeClass(this)">
                                     </div>
                                     <div class="containerTitleComics" title="${e.title}">
                                         <span> ${e.title} </span>

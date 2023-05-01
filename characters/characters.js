@@ -30,7 +30,7 @@ function getFirstResults (orderSelect = 'name', nameCharacter = '') {  //functio
 
             itensAdds += `  <div class="cardCharacters" onclick='showInformation("${srcImage}", "${(e.name.replace(/['"]+/g, ''))}", "${description.replace(/['"]+/g, '')}")'>
                                 <div class="containerImgCharacters">
-                                    <img src="${srcImage}" onload="removeClass(this)">
+                                    <img class="backgroundImg" src="${srcImage}" onload="removeClass(this)">
                                 </div>
                                 <div class="containerTitleCharacter">
                                     <span> ${e.name} </span>
