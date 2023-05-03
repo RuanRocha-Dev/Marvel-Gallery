@@ -15,7 +15,7 @@ class Menu extends HTMLElement {
         li3.href = '../creators/creators.html';
         const li4 = document.createElement('a');
         li4.innerHTML = 'Eventos';
-        li4.href = '#';
+        li4.href = '../events/events.html';
         const li5 = document.createElement('a');
         li5.innerHTML = 'Séries';
         li5.href = '#';

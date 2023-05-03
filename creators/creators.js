@@ -32,7 +32,7 @@ function getFirstResultsCreators (nameCreator = '') {  //function that fetches t
                                     <div class="containerImgCreators">
                                         <img class="backgroundImg" src="${srcImage}" onload="removeClass(this)">
                                     </div>
-                                    <div class="containerTitleCreators" title="${e.title}">
+                                    <div class="containerTitleCreators" title="${e.fullName}">
                                         <span> ${e.fullName} </span>
                                     </div>
                                 </div>`;
