@@ -161,7 +161,7 @@ main > div footer button {
 }
 
 .containerModalComic {
-    width: 80vw;
+    width: 65vw;
     height: 80vh;
     display: flex;
     flex-direction: row;
@@ -172,7 +172,7 @@ main > div footer button {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-    background-image: url('../imgs/moonKnight.jpg');
+    background-image: url('../imgs/captain_america_background.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -298,7 +298,7 @@ main > div footer button {
     }
 
     .containerComics {
-        height: 58vh;
+        height: 55vh;
     }
 
     .containerComics h1 {

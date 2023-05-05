@@ -63,6 +63,11 @@ function showInformation (srcImg, nameCreator, arrayComicsCreator, arrayEventsCr
     const containerModalCreator = document.createElement('div');
     containerModalCreator.classList.add('containerModalCreator');
 
+    const containerCreators = document.querySelectorAll('.containerCreators div');
+    containerCreators.forEach(el => {
+        el.style = 'pointer-events: none';
+    })
+
     containerModalCreator.innerHTML = `   <div class="containerImgAndtitle">   
                                             <div class="containerImgCreator">
                                                 <img src="${srcImg}">
@@ -159,6 +164,11 @@ function getCharacterAndCreatorsInCreator (arrayComicsCreator, arrayEventsCreato
 }
 
 function closeModalCreators (elementRemove) {
+    const containerCreators = document.querySelectorAll('.containerCreators div');
+    containerCreators.forEach(el => {
+        el.style = 'pointer-events: all';
+    })
+
     elementRemove.classList.remove('animate__zoomIn')
     elementRemove.classList.add('animate__zoomOut')
 

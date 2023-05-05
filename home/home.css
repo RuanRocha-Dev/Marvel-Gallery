@@ -16,9 +16,10 @@ main {
 }
 
 .containerGenerateImg p {
-    color: var(--backgroundBody); 
+    color: red; 
     background-color: var(--fontColor); 
     margin-bottom: 20px;
+    padding: 1vh .5vw;
     display: none;
 }
 

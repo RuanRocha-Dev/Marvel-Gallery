@@ -24,7 +24,7 @@ function getFirstResultsEvents (nameEvent = '') {  //function that fetches the n
             return false;
         }
         
-        results.forEach((e, index) => {
+        results.forEach(e => {
 
             let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
 
@@ -79,6 +79,11 @@ function showInformation (srcImg, titleEvent, descriptionEvent, arrayComics, arr
     const containerModalEvent = document.createElement('div');
     containerModalEvent.classList.add('containerModalEvent');
 
+    const containerEvents = document.querySelectorAll('.containerEvents div');
+    containerEvents.forEach(el => {
+        el.style = 'pointer-events: none';
+    })
+
     containerModalEvent.innerHTML = `   <div class="containerImgAndtitle">   
                                             <div class="containerTitle">
                                                 <span> ${titleEvent} </span>
@@ -87,7 +92,7 @@ function showInformation (srcImg, titleEvent, descriptionEvent, arrayComics, arr
                                                 <img src="${srcImg}">
                                             </div>
                                             <div class="containerDescriptionEvent">
-                                                <img src="${descriptionEvent}">
+                                                <p> ${descriptionEvent} </p>
                                             </div>
                                         </div>
                                         <div class="containerInfosEventsAndCharacters">
@@ -114,33 +119,24 @@ function getArrayEvents (arrayComicsEvent, arrayCharacteresEvents) {
     let itensComics = '';
     let itenscharacteres = '';
 
-    let characters = JSON.parse(arrayCharacteresEvents);
     
     if(arrayComicsEvent != null || arrayComicsEvent != undefined) {
-        console.log(arrayComicsEvent);
-        let comics = JSON.parse(arrayComicsEvent);
-        console.log(comics);
-        return false
-
         if(arrayComicsEvent.length <= 0) {
             return '<li> Nenhum evento encontrado </li>';
         }
-        console.log(arrayComicsEvent);
         arrayComicsEvent.forEach(el => {
-            console.log(el, 'arrayComicsEvent');
             itensComics += `<li> ${el.name} </li>`;
         })
 
         return itensComics;
     }
 
-    if(characters != null || characters != undefined) {
-        if(characters.length <= 0) {
+    if(arrayCharacteresEvents != null || arrayCharacteresEvents != undefined) {
+        if(arrayCharacteresEvents.length <= 0) {
             return '<li> Nenhum personagem encontrado(a) </li>';
         }
 
-        characters.forEach(el => {
-            console.log(el, 'characteres');
+        arrayCharacteresEvents.forEach(el => {
             itenscharacteres += `<li> ${el.name} </li>`;
         })
 
@@ -149,6 +145,11 @@ function getArrayEvents (arrayComicsEvent, arrayCharacteresEvents) {
 }
 
 function closeModalEvents (elementRemove) {
+    const containerEvents = document.querySelectorAll('.containerEvents div');
+    containerEvents.forEach(el => {
+        el.style = 'pointer-events: all';
+    })
+
     elementRemove.classList.remove('animate__zoomIn')
     elementRemove.classList.add('animate__zoomOut')
 
@@ -169,12 +170,6 @@ btnPlusEvents.addEventListener('click', () => {
 
 
 function searchEvents () {
-    if(!inputSearchEvents.value != '') {
-        inputSearchEvents.classList.add('animate__swing');
-        inputSearchEvents.onanimationend = () => { inputSearchEvents.classList.remove('animate__swing') }
-        return false;
-    }
-
     counterEvents = 0;
 
     btnSearchEvents.disabled = true;

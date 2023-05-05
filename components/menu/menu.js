@@ -18,10 +18,7 @@ class Menu extends HTMLElement {
         li4.href = '../events/events.html';
         const li5 = document.createElement('a');
         li5.innerHTML = 'Séries';
-        li5.href = '#';
-        const li6 = document.createElement('a');
-        li6.innerHTML = 'Histórias';
-        li6.href = '#';
+        li5.href = '../series/series.html';
         const li7 = document.createElement('a');
         li7.innerHTML = 'Sair';
         li7.href = '../index.html';
@@ -93,6 +90,7 @@ class Menu extends HTMLElement {
                                     font-size: 1.5em;
                                     padding-left: 15vw;
                                     margin-left: -80%;
+                                    background-color: rgba(0 0 0 / 95%);
                                 }
                                 
                                 .menu ul {
@@ -117,7 +115,6 @@ class Menu extends HTMLElement {
         ul.appendChild(li3);
         ul.appendChild(li4);
         ul.appendChild(li5);
-        ul.appendChild(li6);
         ul.appendChild(li7);
 
         shadow.appendChild(ul);

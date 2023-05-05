@@ -189,5 +189,3 @@ function downloadImg () { //downloads the user-generated image
         document.body.removeChild(link);
     });
 }
-
-// localStorage.removeItem('srcImgHeroSelected');

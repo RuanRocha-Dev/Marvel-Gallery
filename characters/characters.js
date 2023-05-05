@@ -63,10 +63,19 @@ function showInformation (srcImg, nameCharacter, descriptionCharacter) {  // cre
     const containerModal = document.createElement('div');
     containerModal.classList.add('containerModal', 'animate__animated', 'animate__zoomIn');
 
+    const containerCharacters = document.querySelectorAll('.containerCharacters div');
+    containerCharacters.forEach(el => {
+        el.style = 'pointer-events: none';
+    })
+
     const closeModal = document.createElement('div');
     closeModal.classList.add('closeModal');
     closeModal.innerHTML = 'X';
     closeModal.onclick = () => {
+        containerCharacters.forEach(el => {
+            el.style = 'pointer-events: all';
+        })
+
         containerModal.classList.remove('animate__zoomIn');
         containerModal.classList.add('animate__zoomOut');
         containerModal.onanimationend = () => { containerModal.remove() } 

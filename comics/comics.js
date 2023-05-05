@@ -63,6 +63,11 @@ function showInformation (srcImg, titleComic, arrayNameCreator, arrayCharactersI
     const containerModalComic = document.createElement('div');
     containerModalComic.classList.add('containerModalComic');
 
+    const containerComics = document.querySelectorAll('.containerComics div');
+    containerComics.forEach(el => {
+        el.style = 'pointer-events: none';
+    })
+
     containerModalComic.innerHTML = `   <div class="containerImgAndtitle">   
                                             <div class="containerImgComic">
                                                 <img src="${srcImg}">
@@ -121,6 +126,11 @@ function getCharacterAndCreatorsInComic (arrayCreators, arraycharacters) {
 }
 
 function closeModalComics (elementRemove) {
+    const containerComics = document.querySelectorAll('.containerComics div');
+    containerComics.forEach(el => {
+        el.style = 'pointer-events: all';
+    })
+
     elementRemove.classList.remove('animate__zoomIn')
     elementRemove.classList.add('animate__zoomOut')
 

@@ -23,7 +23,7 @@ main header h1 {
     text-shadow: var(--textShadow);
 }
 
-.containerSearchEvents {
+.containerSearchSeries {
     width: 90%;
     height: auto;
     display: flex;
@@ -34,14 +34,14 @@ main header h1 {
     margin-bottom: 5vh;
 }
 
-.containerSearchEvents select {
+.containerSearchSeries select {
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: var(--boxShadow);
 }
 
-.containerSearchEvents input {
+.containerSearchSeries input {
     width: 50%;
     padding: 2vh 0px;
     padding-left: 2vw;
@@ -51,7 +51,7 @@ main header h1 {
     font-size: 1.5em;
 }
 
-.containerSearchEvents button {
+.containerSearchSeries button {
     padding: 1.2vh 2.2vw;
     border-radius: 10px;
     border: none;
@@ -65,7 +65,7 @@ main > div {
     position: relative;
 }
 
-.containerEvents {
+.containerSeries {
     width: 100%;
     height: 65vh;
     display: flex;
@@ -77,13 +77,13 @@ main > div {
     overflow-x: hidden;
 }
 
-.containerEvents h1 {
+.containerSeries h1 {
     font-size: 4em; 
     color: var(--fontColor); 
     text-shadow: var(--textShadow)
 }
 
-.cardEvents {
+.cardSeries {
     width: 15%;
     border-radius: 10px;
     margin: 1vh 0;
@@ -92,7 +92,7 @@ main > div {
     background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
 }
 
-.containerImgEvents {
+.containerImgSeries {
     min-width: 100%;
     width: 100%;
     max-width: 100%;
@@ -100,7 +100,7 @@ main > div {
     max-height: 20vh;
 }
 
-.containerImgEvents img {
+.containerImgSeries img {
     width: clamp(100%, 100%, 100%);
     height: clamp(100%, 100%, 100%);
     object-fit: cover;
@@ -137,7 +137,7 @@ main > div footer button {
     cursor: pointer;
 }
 
-.containerTitleEvents {
+.containerTitleSeries {
     width: 100%;
     display: flex;
     align-items: center;
@@ -145,7 +145,7 @@ main > div footer button {
     padding: 1.3vh 0;
 }
 
-.containerTitleEvents span {
+.containerTitleSeries span {
     width: 90%;
     font-size: 1.1em;
     overflow: hidden;
@@ -160,7 +160,7 @@ main > div footer button {
     background-size: 90% 90%;
 }
 
-.containerModalEvent {
+.containerModalSerie {
     width: 65vw;
     height: 80vh;
     display: flex;
@@ -193,7 +193,7 @@ main > div footer button {
     justify-content: space-evenly;
 }
 
-.containerImgEvent {
+.containerImgSerie {
     width: 100%;
     height: clamp(50%, 50%, 50%);
     margin-top: 2%;
@@ -202,7 +202,7 @@ main > div footer button {
     justify-content: center;
 }
 
-.containerImgEvent img {
+.containerImgSerie img {
     height: 100%;
     object-fit: contain;
     border-radius: 10px;
@@ -220,7 +220,7 @@ main > div footer button {
     font-size: 2em;
 }
 
-.containerInfosEventsAndCharacters {
+.containerInfosSeriesAndCharacters {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,14 +229,14 @@ main > div footer button {
     height: clamp(100%, 100%, 100%);
 }
 
-.containerDescriptionEvent p {
+.containerDescriptionSerie p {
     width: 60%;
     margin: auto;
     font-size: 1.2em;
     letter-spacing: 1px;
 }
 
-.containerEvent, .containerCharactersIncludes, .containerStoriesEvents, .containerSeriesEvents, .containerEventEvent {
+.containerSerie, .containerCharactersIncludes, .containerStoriesSeries, .containerSeriesSeries, .containerSeriesSeries {
     width: 100%;
     height: 45%;
     display: flex;
@@ -245,24 +245,24 @@ main > div footer button {
     justify-content: space-evenly;
 }
 
-.containerEvent h3, .containerCharactersIncludes h3, .containerStoriesEvents h3, .containerSeriesEvents h3, .containerEventEvent h3 {
+.containerSerie h3, .containerCharactersIncludes h3, .containerStoriesSeries h3, .containerSeriesSeries h3, .containerSeriesSeries h3 {
     font-size: 3em;
     border-bottom: 2px solid var(--fontColor);
 }
 
-.containerEvent ul, .containerCharactersIncludes ul, .containerStoriesEvents ul, .containerSeriesEvents ul, .containerEventEvent ul {
+.containerSerie ul, .containerCharactersIncludes ul, .containerStoriesSeries ul, .containerSeriesSeries ul, .containerSeriesSeries ul {
     width: 70%;
     max-height: 70%;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
-.containerEvent ul li, .containerCharactersIncludes ul li, .containerStoriesEvents ul li, .containerSeriesEvents ul li, .containerEventEvent ul li {
+.containerSerie ul li, .containerCharactersIncludes ul li, .containerStoriesSeries ul li, .containerSeriesSeries ul li, .containerSeriesSeries ul li {
     font-size: 1.6em;
     padding: 5px 0;
 }
 
-.containerModalEvent > span {
+.containerModalSerie > span {
     font-size: 3em;
     position: absolute;
     top: 2%;
@@ -270,7 +270,7 @@ main > div footer button {
     cursor: pointer;
 }
 
-.containerModalEvent > span:hover {
+.containerModalSerie > span:hover {
     color: red;
 }
 
@@ -280,27 +280,27 @@ main > div footer button {
         text-align: center;
     }
 
-    .containerSearchEvents {
+    .containerSearchSeries {
         width: 90%;
         flex-wrap: wrap;
         margin-bottom: 0px;
     }
 
-    .containerSearchEvents select {
+    .containerSearchSeries select {
         padding: 5px 5px;
         width: 45%;
         margin: 1vh 0;
         order: 2;
     }
 
-    .containerSearchEvents input {
+    .containerSearchSeries input {
         width: 95%;
         margin: 2vh 0;
         font-size: 1em;
         order: 1;
     }
 
-    .containerSearchEvents button {
+    .containerSearchSeries button {
         padding: 5px 9vw;
         margin: 1vh 0;
         order: 3;
@@ -310,20 +310,20 @@ main > div footer button {
         width: 95%;
     }
 
-    .containerEvents {
+    .containerSeries {
         height: 55vh;
     }
 
-    .containerEvents h1 {
+    .containerSeries h1 {
         font-size: 2em;
         text-align: center;
     }
 
-    .cardEvents {
+    .cardSeries {
         width: 30%;
     } 
 
-    .containerImgEvents {
+    .containerImgSeries {
         max-height: 15vh;
     } 
 
@@ -341,23 +341,23 @@ main > div footer button {
         color: var(--fontColor);
     }
 
-    .containerSearchEvents button:hover {
+    .containerSearchSeries button:hover {
         background-color: var(--fontColor);
         color: inherit;
     }
 
-    .containerSearchEvents button:active {
+    .containerSearchSeries button:active {
         background-color: #000;
         color: var(--fontColor);
     }
 
-    .containerModalEvent {
+    .containerModalSerie {
         width: 90vw;
         height: 80vh;
         flex-direction: column;
     }
 
-    .containerImgEvent img {
+    .containerImgSerie img {
         width: 100%;
     }
 
@@ -370,38 +370,38 @@ main > div footer button {
         height: clamp(50%, 50%, 50%);
     }
 
-    .containerDescriptionEvent {
+    .containerDescriptionSerie {
         height: 30%;
         overflow: auto;
     }
 
-    .containerDescriptionEvent p {
+    .containerDescriptionSerie p {
         font-size: 1em;
     }
 
-    .containerInfosEventsAndCharacters {
+    .containerInfosSeriesAndCharacters {
         width: clamp(100%, 100%, 100%);
         height: clamp(50%, 50%, 50%);
     }
 
-    .containerEvent, .containerCharactersIncludes .containerStoriesEvents, .containerSeriesEvents {
+    .containerSerie, .containerCharactersIncludes .containerStoriesSeries, .containerSeriesSeries {
         max-height: 20%;
     }
 
-    .containerEvent h3, .containerCharactersIncludes h3, .containerStoriesEvents h3, .containerSeriesEvents h3, .containerEventEvent h3 {
+    .containerSerie h3, .containerCharactersIncludes h3, .containerStoriesSeries h3, .containerSeriesSeries h3, .containerSeriesSeries h3 {
         font-size: 1.6em;
     }
 
-    .containerEvent ul, .containerCharactersIncludes ul, .containerStoriesEvents ul, .containerSeriesEvents ul, .containerEventEvent ul {
+    .containerSerie ul, .containerCharactersIncludes ul, .containerStoriesSeries ul, .containerSeriesSeries ul, .containerSeriesSeries ul {
         max-height: 40%;
         text-align: center;
     }
 
-    .containerEvent ul li, .containerCharactersIncludes ul li, .containerStoriesEvents ul li, .containerSeriesEvents ul li, .containerEventEvent ul li {
+    .containerSerie ul li, .containerCharactersIncludes ul li, .containerStoriesSeries ul li, .containerSeriesSeries ul li, .containerSeriesSeries ul li {
         font-size: .8em;
     }
 
-    .containerModalEvent > span {
+    .containerModalSerie > span {
         font-size: 2em;
         right: 5%;
     }
