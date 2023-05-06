@@ -1,0 +1,188 @@
+main {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--fontColor);
+    /* background-color: aqua; */
+}
+
+main h1 {
+    font-size: 4em;
+    margin-bottom: 2vh;
+}
+
+main p {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    line-height: 1.3em;
+}
+
+.containerCharactersSaved {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    overflow-y: scroll !important;
+    overflow-y: hidden;
+}
+
+.cardCharactersSaved {
+    width: 30%;
+    cursor: pointer;
+} 
+
+.containerImgCharactersSaved {
+    min-width: 85%;
+    width: 85%;
+    max-width: 85%;
+    height: 30vh;
+    max-height: 30vh;
+    margin: auto auto;
+}
+
+.containerImgCharactersSaved img {
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.backgroundImg {
+    background: url('../imgs/giphy.webp') no-repeat center;
+    background-size: 90% 90%;
+}
+
+.containerTitleCharacterSaved {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.3vh 0;
+}
+
+.containerTitleCharacterSaved span {
+    width: 90%;
+    font-size: 1.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: var(--fontColor);
+}
+
+.containerModal {
+    width: clamp(25vw, 25vw, 25vw);
+    height: clamp(30vw, 30vw, 30vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--backgroundModals);
+    border-radius: 15px;
+    background-image: url('../imgs/moonKnight.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    color: var(--fontColor);
+}
+
+.containerModal > btn {
+    position: absolute;
+    left: 75%;
+    bottom: 5%;
+    border: none;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.closeModal {
+    cursor: pointer;
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+}
+
+.closeModal:hover {
+    color: var(--fontColor);
+}
+
+.containerImg {
+    width: 80%;
+    height: 55%;
+    position: relative;
+}
+
+.containerImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.containerName {
+    width: 80%;
+    height: 3%;
+    padding: 8% 0;
+    text-align: center;
+}
+
+.containerName span {
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.containerDescription p {
+    cursor: pointer;
+}
+
+.closeModal {
+    cursor: pointer;
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+}
+
+
+@media (max-width: 768px) {
+    .containerCharactersSaved {
+        height: 55vh;
+    }
+
+    .cardCharactersSaved {
+        width: 15%;
+        border-radius: 10px;
+        margin: 1vh 0;
+        cursor: pointer;
+        background: rgb(0,0,0);
+        background: linear-gradient(203deg, rgba(0,0,0,1) 0%, rgba(236,29,36,1) 100%);
+    }
+
+    .containerImgCharactersSaved {
+        max-height: 15vh;
+    } 
+
+    .containerModal {
+        width: 85vw;
+        height: 70vh;
+    }
+}

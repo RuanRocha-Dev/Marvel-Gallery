@@ -193,6 +193,18 @@ main > div footer button:hover {
     color: var(--fontColor);
 }
 
+.containerModal > btn {
+    position: absolute;
+    left: 75%;
+    bottom: 5%;
+    border: none;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
 .containerImg {
     width: 80%;
     height: 55%;
@@ -214,6 +226,7 @@ main > div footer button:hover {
 
 .containerName span {
     font-size: 1.3em;
+    cursor: pointer;
 }
 
 .containerDescription {
@@ -222,6 +235,10 @@ main > div footer button:hover {
     overflow-y: scroll;
     overflow-x: hidden;
     text-align: center;
+}
+
+.containerDescription p {
+    cursor: pointer;
 }
 
 .closeModal {

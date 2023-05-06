@@ -86,17 +86,25 @@ function showInformation (srcImg, nameCharacter, descriptionCharacter) {  // cre
     const imgModal = document.createElement('img');
     imgModal.src = srcImg;
 
-
     const containerName = document.createElement('div');
     containerName.classList.add('containerName');
     const name = document.createElement('span');
     name.innerHTML = nameCharacter;
+    name.setAttribute('contenteditable', true)
+    name.onclick = () => { editInfosCharacters(name, btnSaveMyCharacter) };
 
 
     const containerDescription = document.createElement('div');
     containerDescription.classList.add('containerDescription');
     const description = document.createElement('p');
     description.innerHTML = descriptionCharacter;
+    description.setAttribute('contenteditable', true)
+    description.onclick = () => { editInfosCharacters(description, btnSaveMyCharacter) };
+
+    const btnSaveMyCharacter = document.createElement('btn');
+    btnSaveMyCharacter.innerHTML = 'Salvar';
+    btnSaveMyCharacter.classList.add('d-none');
+    btnSaveMyCharacter.onclick = () => { saveCharacter(name.textContent, description.textContent, srcImg) }
 
 
     containerImg.appendChild(imgModal);
@@ -104,6 +112,7 @@ function showInformation (srcImg, nameCharacter, descriptionCharacter) {  // cre
     containerName.appendChild(name);
     containerDescription.appendChild(description);
 
+    containerModal.appendChild(btnSaveMyCharacter);
     containerModal.appendChild(containerImg);
     containerModal.appendChild(containerName);
     containerModal.appendChild(containerDescription);
@@ -148,4 +157,38 @@ function searchCharacter () {
 
     containerCharacters.innerHTML = '';
     getFirstResults(selectTypeSearch.value, inputSearchCharacter.value);
+}
+
+function editInfosCharacters (el, btnSaveCharacter) {
+    el.style = 'background-color: #ccc; color: #000';
+    el.contentEditable = true;
+
+    el.onblur = () => { el.style = '' }
+    el.oninput = () => { btnSaveCharacter.classList.remove('d-none') }
+}
+
+function saveCharacter (name, description, img) {
+    let charactersSaveds = localStorage.getItem('myCharacters');
+    let newData;
+
+    data = {
+        name,
+        description,
+        img
+    }
+
+    if(charactersSaveds != null) {
+        let parseData = JSON.parse(charactersSaveds);
+
+        if(parseData.length > 1) {
+            newData = [...parseData, data];
+        } else {
+            newData = [parseData, data];
+        }
+    } else {
+        newData = data;
+    }
+    
+    localStorage.setItem('myCharacters', JSON.stringify(newData));
+    
 }

@@ -103,12 +103,14 @@ function btnSaveHeroFavorite (nameHero, srcImgHero, idHero) { // function that s
             } else {
                 localStorage.removeItem('heroSelected');
                 localStorage.removeItem('srcImgHeroSelected');
+                localStorage.removeItem('myCharacters')
             }
         }
     }
     
     localStorage.removeItem('heroSelected');
     localStorage.removeItem('srcImgHeroSelected');
+    localStorage.removeItem('myCharacters');
 }
 
 window.addEventListener('resize', () => {
