@@ -1,3 +1,8 @@
+window.onload = () => {
+    insertInfoHero();
+    resizeLogoAndName();
+}
+
 async function favoritHero (paramHero) { // function that requests in the api through the global js file
     if(paramHero) {
         const request = await reqGeneric(`characters?nameStartsWith=${String(paramHero)}&limit=25&orderBy=name`);  
@@ -141,8 +146,6 @@ function resizeLogoAndName () {
     }
 }
 
-resizeLogoAndName()
-
 function insertInfoHero () {
     const img1 = document.querySelector('#imageHero1'); 
     const img2 = document.querySelector('#imageHero2'); 
@@ -161,4 +164,13 @@ function insertInfoHero () {
     img2.style = `display: inherit;`;
 }
 
-insertInfoHero();
+function addAnimation () {
+    const elements = document.querySelectorAll('main .animate__animated');
+    let arrayElements = [...elements];
+    arrayElements.forEach(el => {
+        console.log(el);
+        el.classList.add('animate__zoomIn');
+    })
+}
+
+addAnimation();

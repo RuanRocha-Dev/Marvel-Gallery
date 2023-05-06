@@ -28,7 +28,7 @@ function getFirstResults (orderSelect = 'name', nameCharacter = '') {  //functio
             let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
             let description = e.description != '' ? e.description : 'Information not available!';
 
-            itensAdds += `  <div class="cardCharacters" onclick='showInformation("${srcImage}", "${(e.name.replace(/['"]+/g, ''))}", "${description.replace(/['"]+/g, '')}")'>
+            itensAdds += `  <div class="cardCharacters animate__animated animate__flipInY" onclick='showInformation("${srcImage}", "${(e.name.replace(/['"]+/g, ''))}", "${description.replace(/['"]+/g, '')}")'>
                                 <div class="containerImgCharacters">
                                     <img class="backgroundImg" src="${srcImage}" onload="removeClass(this)">
                                 </div>
@@ -103,8 +103,8 @@ function showInformation (srcImg, nameCharacter, descriptionCharacter) {  // cre
 
     const btnSaveMyCharacter = document.createElement('btn');
     btnSaveMyCharacter.innerHTML = 'Salvar';
-    btnSaveMyCharacter.classList.add('d-none');
-    btnSaveMyCharacter.onclick = () => { saveCharacter(name.textContent, description.textContent, srcImg) }
+    btnSaveMyCharacter.classList.add('d-none', 'animate__animated');
+    btnSaveMyCharacter.onclick = () => { saveCharacter(btnSaveMyCharacter, name.textContent, description.textContent, srcImg) }
 
 
     containerImg.appendChild(imgModal);
@@ -167,7 +167,8 @@ function editInfosCharacters (el, btnSaveCharacter) {
     el.oninput = () => { btnSaveCharacter.classList.remove('d-none') }
 }
 
-function saveCharacter (name, description, img) {
+function saveCharacter (el, name, description, img) {
+    console.log('caiu aqui');
     let charactersSaveds = localStorage.getItem('myCharacters');
     let newData;
 
@@ -188,6 +189,15 @@ function saveCharacter (name, description, img) {
     } else {
         newData = data;
     }
+
+    el.classList.add('animate__flipOutX', 'animate__faster');
+    setTimeout(() => {
+        el.classList.remove('animate__flipOutX');
+        el.classList.add('animate__flipInX');
+        el.style = 'background-color: green; pointer-events: none';
+        el.innerHTML = '<i class="fa fa-check">';
+    }, 350);
+    
     
     localStorage.setItem('myCharacters', JSON.stringify(newData));
     

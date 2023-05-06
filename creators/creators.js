@@ -28,7 +28,7 @@ function getFirstResultsCreators (nameCreator = '') {  //function that fetches t
 
             let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
             
-            itensAddsCreators += `  <div class="cardCreators" onclick='showInformation("${srcImage.replace(/['"]+/g, '')}", "${e?.fullName?.replace(/['"]+/g, '')}", ${JSON.stringify(e?.comics?.items)}, ${JSON.stringify(e?.events?.items)}, ${JSON.stringify(e?.series?.items)}, ${JSON.stringify(e?.stories?.items)} )'>
+            itensAddsCreators += `  <div class="cardCreators animate__animated animate__backInDown" onclick='showInformation("${srcImage.replace(/['"]+/g, '')}", "${e?.fullName?.replace(/['"]+/g, '')}", ${JSON.stringify(e?.comics?.items)}, ${JSON.stringify(e?.events?.items)}, ${JSON.stringify(e?.series?.items)}, ${JSON.stringify(e?.stories?.items)} )'>
                                     <div class="containerImgCreators">
                                         <img class="backgroundImg" src="${srcImage}" onload="removeClass(this)">
                                     </div>

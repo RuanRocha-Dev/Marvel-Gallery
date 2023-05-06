@@ -1,26 +1,49 @@
+window.onload = () => {
+    getAllCharactersSaved();
+}
+
 function getAllCharactersSaved () {
     let containerCharactersSaved = document.querySelector('.containerCharactersSaved');
     const arrayMyCharacters = JSON.parse(localStorage.getItem('myCharacters'));
-    console.log(arrayMyCharacters);
     itensAdds = '';
-    
-    arrayMyCharacters.forEach(el => {
-        itensAdds += `  <div class="cardCharactersSaved" onclick='showInformation("${el?.img}", "${(el?.name.replace(/['"]+/g, ''))}", "${el?.description.replace(/['"]+/g, '')}")'>
-                            <div class="containerImgCharactersSaved">
-                                <img class="backgroundImg" src="${el?.img}" onload="removeClass(this)">
-                            </div>
-                            <div class="containerTitleCharacterSaved">
-                                <span> ${el?.name} </span>
-                            </div>
-                        </div>`;
-    });
 
+    if(arrayMyCharacters != null) {
+        const titleGeneric = document.querySelector('main > h1')
+        titleGeneric.classList.remove('d-none');
+        
+        if(arrayMyCharacters.length != undefined) {
+            arrayMyCharacters.forEach(el => {
+                itensAdds += `  <div class="cardCharactersSaved animate__animated animate__zoomIn" onclick='showInformation("${el?.img}", "${(el?.name.replace(/['"]+/g, ''))}", "${el?.description.replace(/['"]+/g, '')}")'>
+                                    <div class="containerImgCharactersSaved">
+                                        <img class="backgroundImg" src="${el?.img}" onload="removeClass(this)">
+                                    </div>
+                                    <div class="containerTitleCharacterSaved">
+                                        <span> ${el?.name} </span>
+                                    </div>
+                                </div>`;
+            });
+        
+            
+            containerCharactersSaved.innerHTML = itensAdds;
+            itensAdds = '';
+        } else {
+                itensAdds += `  <div class="cardCharactersSaved animate__animated animate__zoomIn" onclick='showInformation("${arrayMyCharacters?.img}", "${(arrayMyCharacters?.name.replace(/['"]+/g, ''))}", "${arrayMyCharacters?.description.replace(/['"]+/g, '')}")'>
+                                    <div class="containerImgCharactersSaved">
+                                        <img class="backgroundImg" src="${arrayMyCharacters?.img}" onload="removeClass(this)">
+                                    </div>
+                                    <div class="containerTitleCharacterSaved">
+                                        <span> ${arrayMyCharacters?.name} </span>
+                                    </div>
+                                </div>`;
+        
+            
+            containerCharactersSaved.innerHTML = itensAdds;
+            itensAdds = '';
+        }
+
+    }
     
-    containerCharactersSaved.innerHTML = itensAdds;
-    itensAdds = '';
 }
-
-getAllCharactersSaved()
 
 function showInformation (srcImg, nameCharacter, descriptionCharacter) { 
     const containerModal = document.createElement('div');

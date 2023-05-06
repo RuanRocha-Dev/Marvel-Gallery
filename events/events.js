@@ -46,7 +46,7 @@ function getFirstResultsEvents (nameEvent = '') {  //function that fetches the n
             containerImgEvents.appendChild(image);
 
             const cardEvents = document.createElement('div');
-            cardEvents.classList.add('cardEvents');
+            cardEvents.classList.add('cardEvents', 'animate__animated', 'animate__bounceIn');
             cardEvents.onclick = () => {
                 showInformation(srcImage, e?.title, e?.description, [...e?.comics?.items], [...e?.characters?.items]);
             };

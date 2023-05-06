@@ -240,6 +240,18 @@ main input {
     margin: 0 auto;
 }
 
+.elementoBackground {
+    position: fixed;
+    right: 4vw;
+    top: 15vh;
+    z-index: -1;
+}
+
+.elementoBackground img {
+    filter: drop-shadow(-10px 17px 10px #000);
+    transform: scale(1.5);
+}
+
 @media screen and (max-width: 768px) {
     main {
         margin-top: 10vh;
@@ -311,6 +323,14 @@ main input {
         overflow-y: auto;
         text-align: center;
         padding: 2vh 0;
+    }
+
+    .elementoBackground {
+        right: auto;
+    }
+
+    .elementoBackground img {
+        transform: scale(1);
     }
 }
 

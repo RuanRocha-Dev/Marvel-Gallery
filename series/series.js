@@ -45,7 +45,7 @@ function getFirstResultsSeries (nameSeries = '') {  //function that fetches the 
             containerImgSeries.appendChild(image);
 
             const cardSeries = document.createElement('div');
-            cardSeries.classList.add('cardSeries');
+            cardSeries.classList.add('cardSeries', 'animate__animated', 'animate__zoomInUp');
             cardSeries.onclick = () => {
                 showInformation(srcImage, e?.title, e?.description, [...e?.comics?.items], [...e?.characters?.items]);
             };

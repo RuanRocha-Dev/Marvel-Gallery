@@ -254,6 +254,15 @@ main > div footer button:hover {
     color: var(--fontColor);
 }
 
+main > img {
+    position: fixed;
+    right: 0%;
+    top: 5%;
+    z-index: -1;
+    transform: scale(2);
+    filter: drop-shadow(-10px 17px 10px #000);
+}
+
 @media (max-width: 768px) {
     main header h1 {
         font-size: 1.9em;
@@ -333,5 +342,10 @@ main > div footer button:hover {
     .containerModal {
         width: 85vw;
         height: 70vh;
-    } 
+    }
+    
+    main > img {
+        right: auto;
+        transform: scale(1);
+    }
 }

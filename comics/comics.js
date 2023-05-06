@@ -28,7 +28,7 @@ function getFirstResultsComics (orderSelect = 'title', nameComic = '') {  //func
 
             let srcImage = !e.thumbnail.path.includes('not_available') ? `${e.thumbnail.path}.${e.thumbnail.extension}` : '../imgs/img-default.jpg';
             
-            itensAddscomics += `  <div class="cardComics" onclick='showInformation("${srcImage}", "${(e?.title?.replace(/['"]+/g, ''))}", ${JSON.stringify(e?.creators?.items)}, ${JSON.stringify(e?.characters?.items)} )'>
+            itensAddscomics += `  <div class="cardComics animate__animated animate__rotateInDownLeft" onclick='showInformation("${srcImage}", "${(e?.title?.replace(/['"]+/g, ''))}", ${JSON.stringify(e?.creators?.items)}, ${JSON.stringify(e?.characters?.items)} )'>
                                     <div class="containerImgComics">
                                         <img class="backgroundImg" src="${srcImage}" onload="removeClass(this)">
                                     </div>

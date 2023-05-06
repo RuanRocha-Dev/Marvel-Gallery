@@ -139,7 +139,8 @@ hamburguer.addEventListener('click', () => {
     menu.classList.toggle('menuToggle');  // the code so far makes the function of opening and closing the side menu
 })
 
-
-const menuItem = menu.querySelector(`a[href="..${window.location.pathname}"]`);
-menuItem.style.color = 'red';
+if(!window.location.pathname.includes('home')) {
+    const menuItem = menu.querySelector(`a[href="..${window.location.pathname}"]`);
+    menuItem.style.color = 'red';
+}
 

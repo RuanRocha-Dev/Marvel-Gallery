@@ -128,8 +128,15 @@ function generateImg (btn) {  // function to generate an image via text that the
         const image = document.querySelector('.containerImgGenerated img');
         generatorImgHero(valueInput.value, nameHeroFavorite).then((resp) => {
             image.src = resp.output_url;
-            containerGenerateImg.style.display = 'none';
-            containerImg.style.display = 'contents';
+
+            containerGenerateImg.classList.add('animate__rollOut', 'animate__fast');
+            setTimeout(() => {
+                containerImg.style.display = 'contents';
+                containerImg.classList.add('animate__rollIn', 'animate__fast');
+                
+                containerGenerateImg.style.display = 'none';
+                containerGenerateImg.classList.remove('animate__rollOut');
+            }, 500);
             
             let srcImgHeroGenerated = {
                 srcImgGenerated: resp.output_url
