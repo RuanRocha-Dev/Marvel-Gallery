@@ -168,7 +168,6 @@ function editInfosCharacters (el, btnSaveCharacter) {
 }
 
 function saveCharacter (el, name, description, img) {
-    console.log('caiu aqui');
     let charactersSaveds = localStorage.getItem('myCharacters');
     let newData;
 

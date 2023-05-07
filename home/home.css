@@ -242,14 +242,15 @@ main input {
 
 .elementoBackground {
     position: fixed;
-    right: 4vw;
-    top: 15vh;
+    right: 10vw;
+    top: 0;
     z-index: -1;
+    transition: all 0.3s ease-out;
 }
 
 .elementoBackground img {
+    object-fit: cover;
     filter: drop-shadow(-10px 17px 10px #000);
-    transform: scale(1.5);
 }
 
 @media screen and (max-width: 768px) {
@@ -327,10 +328,6 @@ main input {
 
     .elementoBackground {
         right: auto;
-    }
-
-    .elementoBackground img {
-        transform: scale(1);
     }
 }
 

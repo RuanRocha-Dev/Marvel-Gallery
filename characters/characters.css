@@ -254,13 +254,16 @@ main > div footer button:hover {
     color: var(--fontColor);
 }
 
-main > img {
-    position: fixed;
-    right: 0%;
-    top: 5%;
+.elementoBackground {
+    position: absolute;
+    left: 75vw;
+    top: -2vh;
     z-index: -1;
-    transform: scale(2);
+}
+
+.elementoBackground img {
     filter: drop-shadow(-10px 17px 10px #000);
+    transform: scale(1.5);
 }
 
 @media (max-width: 768px) {
@@ -344,8 +347,14 @@ main > img {
         height: 70vh;
     }
     
-    main > img {
-        right: auto;
+    .elementoBackground {
+        left: 5vw;
+        top: -5vh;
+        z-index: -1;
+    }
+    
+    .elementoBackground img {
+        filter: drop-shadow(-10px 17px 10px #000);
         transform: scale(1);
     }
 }
