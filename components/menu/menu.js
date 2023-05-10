@@ -50,6 +50,7 @@ class Menu extends HTMLElement {
                                 transition: all .4s ease-out;
                                 list-style: none;
                                 padding-left: 2vw;
+                                z-index: 999;
                             }
 
                             .menuToggle {
@@ -89,7 +90,7 @@ class Menu extends HTMLElement {
                                     height: 100%;
                                     padding: 10px;
                                     position: fixed;
-                                    z-index: 99;
+                                    z-index: 999;
                                     font-size: 1.5em;
                                     padding-left: 15vw;
                                     margin-left: -80%;

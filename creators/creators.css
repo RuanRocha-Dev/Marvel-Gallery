@@ -368,7 +368,8 @@ main > div footer button {
     }
 
     .containerTitle span {
-        font-size: 1em;
+        font-size: 1.6em;
+        text-align: center;
     }
 
     .containerImgAndtitle {
@@ -386,7 +387,7 @@ main > div footer button {
     }
 
     .containerCreatorCreator h3, .containerCharactersIncludes h3, .containerStoriesCreators h3, .containerSeriesCreators h3 {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 
     .containerCreatorCreator ul, .containerCharactersIncludes ul, .containerStoriesCreators ul, .containerSeriesCreators ul {

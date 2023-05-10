@@ -66,7 +66,7 @@ class Header extends HTMLElement {
                                 top: 2vh;
                                 left: 1vw;
                                 cursor: pointer;
-                                z-index: 999;
+                                z-index: 9999;
                             }
 
                             .menuIconHamgurguer div {

@@ -255,6 +255,8 @@ main > div footer button:hover {
 }
 
 .elementoBackground {
+    width: auto;
+    height: auto;
     position: absolute;
     left: 75vw;
     top: -2vh;
@@ -349,8 +351,6 @@ main > div footer button:hover {
     
     .elementoBackground {
         left: 5vw;
-        top: -5vh;
-        z-index: -1;
     }
     
     .elementoBackground img {
